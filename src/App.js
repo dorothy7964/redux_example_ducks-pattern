@@ -3,6 +3,7 @@ import './App.css';
 
 import Palette from './components/Palette';
 import Counter from './components/Counter';
+import WaitingList from './components/WaitingList';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <Palette />
         <Counter />
+        <WaitingList />
       </div>
     );
   }
