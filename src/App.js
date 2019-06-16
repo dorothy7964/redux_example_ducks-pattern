@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import PaletteContainer from './containers/PaletteContainer';
-import Counter from './components/Counter';
+import CounterContainer from './containers/CounterContainer';
 import WaitingList from './components/WaitingList';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     return(
       <div className="App">
         <PaletteContainer />
-        <Counter />
+        <CounterContainer />
         <WaitingList />
       </div>
     );

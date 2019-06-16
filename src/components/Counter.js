@@ -1,12 +1,12 @@
 import React from 'react';
 import './Counter.css';
 
-const Counter = (props) => {
+const Counter = ({ color, value, onIncrement, onDecrement }) => {
   return (
     <div className="Counter">
-      <h1>value</h1>
-      <button>+</button>
-      <button>-</button>
+      <h1 style={{ color }}>{value}</h1>
+      <button onClick={onIncrement}>+</button>
+      <button onClick={onDecrement}>-</button>
     </div>
   )
 }
