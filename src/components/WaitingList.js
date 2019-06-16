@@ -1,41 +1,47 @@
 import React from 'react';
 import './WaitingList.css';
 
-const WaitingList = (props) => {
+const WaitingItem = ({ text, entered, onEnter, onLeave }) => {
+  return (
+    <li>
+      <div className={`text ${entered ? 'entered' : ''}`}>{text}</div>
+      <div className="buttons">
+        <button onClick={onEnter}>입장</button>
+        <button onClick={onLeave}>나감</button>
+      </div>
+    </li>
+  );
+};
 
+const WaitingList = ({
+  input,
+  waitingList,
+  onChange,
+  onSubmit,
+  onEnter,
+  onLeave,
+}) => {
+  const waitingItems = waitingList.map(w => (
+    <WaitingItem
+      key={w.id}
+      id={w.id}
+      text={w.name}
+      entered={w.entered}
+      onEnter={() => onEnter(w.id)}
+      onLeave={() => onLeave(w.id)}
+    />
+  ));
 
   return (
     <div className="WaitingList">
       <h2>WaitingList</h2>
 
-      <form>
-        <input />
+      <form onSubmit={onSubmit}>
+         <input value={input} onChange={onChange} />
         <button>등록</button>
       </form>
 
-      <ul>
-        <li>
-          <div className="text entered">text</div>
-          <div className="buttons">
-            <button>입장</button>
-            <button>나감</button>
-          </div>
-        </li>
-        <li>
-          <div className="text">text</div>
-          <div className="buttons">
-            <button>입장</button>
-            <button>나감</button>
-          </div>
-        </li>
-          <li>
-            <div className="text">text</div>
-            <div className="buttons">
-              <button>입장</button>
-              <button>나감</button>
-            </div>
-          </li>
-      </ul>
+      <ul>{waitingItems}</ul>
     </div>
   )
 }
