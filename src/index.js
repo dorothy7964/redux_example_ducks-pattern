@@ -10,9 +10,10 @@ import rootReducer from './store/modules';
 // **** (3) Provider 불러오기
 import { Provider } from 'react-redux';
 
-// **** (2) 스토어를 만들고 현재 값 확인해보기
-const store = createStore(rootReducer);
-console.log(store.getState());
+// (2) 리덕스 개발자도구 적용
+const devTools =
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const store = createStore(rootReducer, devTools);
 
 // **** (3) Provider 렌더링해서 기존의 App 감싸주기
 ReactDOM.render(
