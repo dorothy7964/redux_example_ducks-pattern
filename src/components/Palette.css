@@ -1,27 +1,28 @@
-.Palette{
-  display: inline-flex; flex-direction: column;
-  background-color: black; color: white;
+.Palette {
+  border-bottom: 1px solid lightgray;
+  width: 100%;
   padding: 1rem;
 }
 
-.Palette h2{
-  margin-top: 0; margin-bottom: 1rem;
+.Palette h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
+
 .Palette .colors {
-  width: 18rem;
   display: flex;
   justify-content: space-around;
 }
 
 .Palette .PaletteItem {
-  width: 2rem; height: 2rem;
+  opacity: 0.5;
   border-radius: 1rem;
-  cursor: pointer;
-  opacity: 0.7;
+  width: 1rem;
+  height: 1.5rem;
 }
 
 .Palette .PaletteItem:hover {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .Palette .PaletteItem.active {
